@@ -1,1 +1,17 @@
-Name:
+Name:           ipnetic
+Version:        0.0.1
+Copyright:      (c) 2012 Princeton University (?)
+License:        BSD3
+License-File:   LICENSE
+Cabal-Version:  >= 1.9.2
+Build-Type:     Simple
+Synopsis:       A version of the NetCore compiler for IPtables
+Description:
+    NetCore is a high-level network programming language.
+    This package is an attempt to provide similar functionality
+    to what NetCore provides for OpenFlow networks for general-purpose
+    Linux boxes running IPTables.
+
+Executable ipnetic
+    Main-is:    Main.hs
+    build-depends: base >= 4 && < 5, iproute
