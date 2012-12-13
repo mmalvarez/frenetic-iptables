@@ -1,9 +1,11 @@
+Module Token where
+
 ---Stores syntactic output tokens
 
 --Tokens are options to the iptables command
 
 --A command consists of target, chain, rule, a predicate, and an action
-data Command = Command Chain Rule PredToken Action
+data Command = Command Chain PredToken Action
 
 data Chain = Input | Output
 
@@ -23,7 +25,7 @@ data PredToken =
   | Always
 
 translateCommand :: Command -> String
-translateCommand (Command chain rule pred action) =
+translateCommand (Command chain pred action) =
   "iptables -A " ++ chainS ++ " " ++ predS ++ " " ++ actionS ++ "\n"
   where
     chainS = case chain of
